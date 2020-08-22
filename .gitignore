@@ -6,8 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Compiled files
-dist/
-build/
+public/
 
 # Dependency directories
 node_modules/

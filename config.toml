@@ -1,3 +1,12 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+MetaDataFormat = "yaml"
+baseURL = "https=//chenningg.com/"
+defaultContentLanguage = "en"
+description = "Welcome to my personal portfolio site, where I blog about code and other musings!"
+enableRobotsTXT = true
+languageCode = "en"
+sectionPagesMenu = "main"
+title = "Chen Ning"
+
+[params]
+author = "Chen Ning"
+description = "Hi! I'm Chen Ning, an undergraduate student from Singapore."

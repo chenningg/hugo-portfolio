@@ -1,0 +1,18 @@
+description = ""
+features = []
+homepage = "http://example.com/"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+min_version = "0.41.0"
+name = "Haru"
+tags = []
+
+[author]
+homepage = ""
+name = ""
+
+# If porting an existing theme
+[original]
+homepage = ""
+name = ""
+repo = ""

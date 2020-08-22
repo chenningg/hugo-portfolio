@@ -1,9 +1,11 @@
+const isDev = process.env.NODE_ENV === "development";
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
   },
   purge: {
-    enabled: true,
+    enabled: !isDev,
     content: [
       "./themes/haru/layouts/**/*.html",
       "./themes/haru/layouts/*.html",

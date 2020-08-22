@@ -1,0 +1,106 @@
+<header class="w-full h-20 bg-transparent absolute">
+  <div
+    class="w-full h-full lg:container flex flex-row justify-between mx-auto px-5"
+  >
+    {{/* Logo */}}
+    <div class="flex justify-left items-center h-full w-40">
+      <a
+        href="/"
+        class="flex justify-center items-center px-2 py-2 rounded-lg hover:no-underline"
+      >
+        <div class="h-10 w-10 rounded-full object-cover object-center"></div>
+        <p class="text-white text-base font-medium ml-2">Chen Ning</p>
+      </a>
+    </div>
+
+    {{/* Desktop navigation menu */}}
+    <nav class="h-full text-white font-medium hidden lg:block">
+      <div class="h-full flex flex-row items-center justify-center">
+        <a href="/" class="px-4 py-2 mx-2 text-base">Home</a>
+        <a href="/blog/" class="px-4 py-2 mx-2 text-base">Blog</a>
+        <a href="/projects/" class="px-4 py-2 mx-2 text-base">Projects</a>
+        <a href="/about/" class="px-4 py-2 mx-2 text-base">About</a>
+        <a href="/contact/" class="px-4 py-2 mx-2 text-base">Contact</a>
+      </div>
+    </nav>
+
+    <div
+      x-data="{open: false}"
+      class="flex justify-end items-center h-full w-40 lg:invisible"
+    >
+      {{/* Hamburger menu icon */}}
+      <button
+        @click="open = true"
+        aria-label="Open menu"
+        class="flex flex-col justify-center items-center h-12 w-12 space-y-1 cursor-pointer rounded-lg hover:bg-black"
+      >
+        <span class="w-6 h-1 rounded-md bg-white"></span>
+        <span class="w-6 h-1 rounded-md bg-white"></span>
+        <span class="w-6 h-1 rounded-md bg-white"></span>
+      </button>
+
+      {{/* Mobile navigation menu */}}
+      <nav
+        x-show="open"
+        @click.away="open = false"
+        class="fixed inset-y-0 right-0 w-64 bg-black z-20"
+      >
+        <div class="w-full h-full flex flex-col">
+          {{/* Cross icon to close menu */}}
+          <div
+            class="flex flex-row justify-between items-center w-full h-20 bg-black px-5"
+          >
+            <h5 class="text-white ml-2">Menu</h5>
+
+            <button
+              @click="open = false"
+              aria-label="Close menu"
+              class="flex flex-col justify-center items-center h-12 w-12 space-y-1 cursor-pointer rounded-lg hover:bg-teal-600"
+            >
+              <span
+                class="w-6 h-1 rounded-md bg-white transform rotate-45 translate-y-1"
+              ></span>
+              <span
+                class="w-6 h-1 rounded-md bg-white transform -rotate-45 -translate-y-1"
+              ></span>
+            </button>
+          </div>
+
+          <hr class="bg-white h-0 w-full opacity-25" />
+
+          {{/* Vertical menu */}}
+          <div class="flex flex-col items-center justify-start text-white px-5">
+            <a
+              href="/"
+              class="w-full block px-3 py-3 mt-3 text-base rounded-md hover:bg-teal-600 hover:no-underline"
+              >Home</a
+            >
+            <a
+              href="/blog/"
+              class="w-full block px-3 py-3 mt-3 text-base rounded-md hover:bg-teal-600 hover:no-underline"
+              >Blog</a
+            >
+            <a
+              href="/projects/"
+              class="w-full block px-3 py-3 mt-3 text-base rounded-md hover:bg-teal-600 hover:no-underline"
+              >Projects</a
+            >
+            <a
+              href="/about/"
+              class="w-full block px-3 py-3 mt-3 text-base rounded-md hover:bg-teal-600 hover:no-underline"
+              >About</a
+            >
+            <a
+              href="/contact/"
+              class="w-full block px-3 py-3 mt-3 text-base rounded-md hover:bg-teal-600 hover:no-underline"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      {{/* Darken background if menu is open */}}
+      <div x-show="open" class="fixed bg-black opacity-25 inset-0 z-10"></div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	{{ partial "head.html" . }}
+
+	<body>
+		{{ partial "header.html" . }}
+
+		<section class="w-full flex flex-col justify-center bg-indigo-800 pt-20">
+			<div class="lg:container mx-auto my-16 px-5 py-12 pt-0 text-center text-white">
+				<h1 class="text-5xl font-bold mb-2">Hi! I'm Chen Ning.</h1>
+				<p class="text-lg font-normal">
+					Currently a student aspiring to become a software engineer.
+				</p>
+				<div class="flex flex-row justify-center mt-8">
+					<a href="/projects" class="px-5 py-3 mx-4 rounded-full bg-pink-600 text-base font-medium text-shadow-md hover:no-underline hover:shadow-xl">My Projects</a>
+					<a href="/about" class="px-5 py-3 mx-4 rounded-full bg-teal-600 text-base font-medium text-shadow-md hover:no-underline hover:shadow-xl">About Me</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="w-full bg-white">
+			<div class="lg:container mx-auto p-5">
+				<h2 class="font-bold">My projects</h2>
+				<p>
+					Yes, there is styling for code blocks but not much else, because I'm a
+					          programmer like that...
+				</p>
+				<pre data-line="3-4, 9"><code class="language-css">body { color: red;}
+
+.test {
+  display: block;
+  
+}
+
+#id {
+  position: relative rw1nr1kqwnfr1jp4rjp12jr4l1oiroindlswkfnvqp31ihr01jn1rp1qinj1pcrc1njpon2j;
+  width: 100px;
+}</code></pre>
+			</div>
+		</section>
+
+		<div>
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1440 320">
+				<path fill="#edf2f7" fill-opacity="1" d="M0,192L48,192C96,192,192,192,288,170.7C384,149,480,107,576,122.7C672,139,768,213,864,229.3C960,245,1056,203,1152,181.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+			</svg>
+		</div>
+
+		<section class="bg-gray-200">
+			<div class="lg:container mx-auto p-5">
+				<h2>Latest posts</h2>
+				<ul>
+					{{ range first 10 .Site.RegularPages }}
+						{{ if eq .Type "posts" }}
+
+							<li class="mb-4 hover:bg-gray-100">
+								<a href="{{ .Permalink }}">{{ .Title }}</a>
+							</li>
+						{{ end }}
+					{{ end }}
+
+				</ul>
+			</div>
+		</section>
+
+		{{ partial "footer.html" . }}
+
+	</body>
+</html>

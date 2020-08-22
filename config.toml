@@ -1,12 +1,10 @@
-MetaDataFormat = "yaml"
-baseURL = "https=//chenningg.com/"
-defaultContentLanguage = "en"
+baseURL = "https://chenningg.com/"
 description = "Welcome to my personal portfolio site, where I blog about code and other musings!"
 enableRobotsTXT = true
-languageCode = "en"
+languageCode = "en-us"
 sectionPagesMenu = "main"
+theme = "haru"
 title = "Chen Ning"
 
-[params]
-author = "Chen Ning"
-description = "Hi! I'm Chen Ning, an undergraduate student from Singapore."
+[permalinks]
+posts = "/blog/:year/:title/"

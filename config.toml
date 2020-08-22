@@ -6,5 +6,7 @@ sectionPagesMenu = "main"
 theme = "haru"
 title = "Chen Ning"
 
+pygmentsStyle = "dracula"
+
 [permalinks]
 posts = "/blog/:year/:title/"

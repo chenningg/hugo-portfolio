@@ -1,15 +1,17 @@
-<head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>
-		{{ .Site.Title }}
+<head lang="{{ .Site.LanguageCode }}">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    {{ .Site.Title }}
 
-	</title>
-	<meta name="description" content="test"/>
+  </title>
+  <meta name="description" content="test" />
 
-	{{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
-	<link rel="stylesheet" href="{{ $css.Permalink }}">
+  {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
 
-	{{ $js := resources.Get "js/alpine.js" | minify | fingerprint }}
-	<script src="{{ $js.Permalink }}" defer></script>
+  <link rel="stylesheet" href="{{ $css.Permalink }}" />
+
+  {{ $js := resources.Get "js/alpine.js" | minify | fingerprint }}
+
+  <script src="{{ $js.Permalink }}" defer></script>
 </head>

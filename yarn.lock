@@ -1075,6 +1075,16 @@ postcss@^6.0.9:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
+prettier-plugin-go-template@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-go-template/-/prettier-plugin-go-template-0.0.7.tgz#60fbc72ca2cd55193bfd77994ef9ddc3f15d0f7e"
+  integrity sha512-vMH5NK90/shFIhMjp+Ta3zY2L9YWVnRhqtZxPl61QF9qepNaSdBUnGYv52lFPxJyAipI1yv5qZwgNzSACxdPMA==
+
+prettier@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
+  integrity sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
+
 pretty-hrtime@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"

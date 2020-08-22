@@ -1,15 +1,17 @@
 ---
 title: "First"
 date: 2020-08-22T16:07:51+08:00
-draft: true
+draft: false
 description: ""
 tags: []
 categories: []
 ---
 
-# This is the first post!
+# If I were a cat
 
-Let's write in markdown to see what the hype is all about...
-Can we add images? Perhaps, perhaps not.
-I'm a cat that meows. Or am I a dog that barks?
-Chase ball, see sunlight. Roll around. Sleep.
+Sleep all day. Play with ball. Sunlight! Time to nap.
+Chase ball. Blink at owner. Scratch owner.
+Eat food. Drink water. Chase laser.
+Demand a massage and head scritches.
+Bathe. Don't like water.
+Sleep.

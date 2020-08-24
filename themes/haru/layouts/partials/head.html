@@ -9,9 +9,9 @@
 
   {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
 
-  <link rel="stylesheet" href="{{ $css.Permalink }}" />
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 
-  {{ $js := resources.Get "js/alpine.js" | minify | fingerprint }}
+  {{ $js := resources.Get "js/main.js" | js.Build "main.js" | minify | fingerprint }}
 
-  <script src="{{ $js.Permalink }}" defer></script>
+  <script src="{{ $js.RelPermalink }}" defer></script>
 </head>

@@ -11,11 +11,11 @@
     <!-- Main nav -->
     <nav class="h-16 text-black font-medium hidden md:block">
       <div class="h-full flex flex-row items-center justify-center">
-        <a href="/" class="py-1 mx-4 mb-1 text-base">Home</a>
-        <a href="/blog/" class="py-1 mx-4 mb-1 text-base">Blog</a>
-        <a href="/projects/" class="py-1 mx-4 mb-1 text-base">Projects</a>
-        <a href="/about/" class="py-1 mx-4 mb-1 text-base">About</a>
-        <a href="/contact/" class="py-1 mx-4 mb-1 text-base">Contact</a>
+        <a href="/" class="mx-4 mb-1 text-base">Home</a>
+        <a href="/blog/" class="mx-4 mb-1 text-base">Blog</a>
+        <a href="/projects/" class="mx-4 mb-1 text-base">Projects</a>
+        <a href="/about/" class="mx-4 mb-1 text-base">About</a>
+        <a href="/contact/" class="mx-4 mb-1 text-base">Contact</a>
       </div>
     </nav>
 
@@ -51,7 +51,7 @@
         <span class="w-6 h-1 rounded-full bg-black"></span>
       </button>
 
-      <!-- Main nav -->
+      <!-- Mobile nav -->
       <nav
         x-show="open"
         @click.away="open = false"
@@ -62,7 +62,7 @@
           <div
             class="flex flex-row justify-between items-center w-full h-16 bg-gray-200 px-6 border border-b"
           >
-            <h5 class="text-black ml-1 pt-2">Menu</h5>
+            <h5 class="text-black pt-2">Menu</h5>
 
             <button
               @click="open = false"
@@ -79,30 +79,20 @@
           </div>
 
           <!-- Menu items -->
-          <div class="flex flex-col items-center justify-start text-black px-5">
-            <a
-              href="/"
-              class="w-full block px-3 py-2 mt-2 text-base font-medium"
+          <div class="flex flex-col items-center justify-start text-black px-6">
+            <a href="/" class="w-full block my-2 mt-4 text-base font-medium"
               >Home</a
             >
-            <a
-              href="/blog/"
-              class="w-full block px-3 py-2 mt-2 text-base font-medium"
+            <a href="/blog/" class="w-full block my-2 text-base font-medium"
               >Blog</a
             >
-            <a
-              href="/projects/"
-              class="w-full block px-3 py-2 mt-2 text-base font-medium"
+            <a href="/projects/" class="w-full block my-2 text-base font-medium"
               >Projects</a
             >
-            <a
-              href="/about/"
-              class="w-full block px-3 py-2 mt-2 text-base font-medium"
+            <a href="/about/" class="w-full block my-2 text-base font-medium"
               >About</a
             >
-            <a
-              href="/contact/"
-              class="w-full block px-3 py-2 mt-2 text-base font-medium"
+            <a href="/contact/" class="w-full block my-2 text-base font-medium"
               >Contact</a
             >
           </div>

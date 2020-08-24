@@ -1,6 +1,11 @@
-<footer>
-	<nav>
-		<a href="/">Home</a>
-		<a href="/blog">Blog</a>
-	</nav>
+<footer class="p-6">
+  {{ partial "social-icons.html" . }}
+
+  <nav class="md:container mx-auto flex justify-center">
+    <a href="/" class="mx-4 font-medium text-base">Home</a>
+    <a href="/blog" class="mx-4 font-medium text-base">Blog</a>
+    <a href="/projects" class="mx-4 font-medium text-base">Projects</a>
+    <a href="/about" class="mx-4 font-medium text-base">About</a>
+    <a href="/contact" class="mx-4 font-medium text-base">Contact</a>
+  </nav>
 </footer>

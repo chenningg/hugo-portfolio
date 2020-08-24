@@ -6,7 +6,7 @@
   "repository": "https://github.com/chenningg/hugo-portfolio.git",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf ./public ./resources",
+    "clean": "rimraf ./public",
     "dev": "cross-env NODE_ENV=development run-s clean dev:*",
     "dev:hugo": "hugo server -D",
     "build": "cross-env NODE_ENV=production run-s clean build:*",

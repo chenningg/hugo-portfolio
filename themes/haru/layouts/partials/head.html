@@ -2,16 +2,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>
-    {{ .Site.Title }}
+    {{- .Site.Title -}}
 
   </title>
   <meta name="description" content="test" />
 
   {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
 
+  {{- $js := resources.Get "js/main.js" | js.Build "main.js" | minify | fingerprint -}}
+
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
-
-  {{ $js := resources.Get "js/main.js" | js.Build "main.js" | minify | fingerprint }}
-
   <script src="{{ $js.RelPermalink }}" defer></script>
 </head>

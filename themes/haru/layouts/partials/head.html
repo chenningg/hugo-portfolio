@@ -9,7 +9,9 @@
 
   {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
 
-  {{- $js := resources.Get "js/main.js" | js.Build "main.js" | minify | fingerprint -}}
+  {{- $bundledJs := resources.Get "js/main.js" | js.Build "js/main.js" -}}
+
+  {{- $js := $bundledJs | minify | fingerprint -}}
 
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
   <script src="{{ $js.RelPermalink }}" defer></script>

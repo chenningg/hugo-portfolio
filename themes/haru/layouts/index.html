@@ -2,15 +2,16 @@
 
 <section class="w-full flex flex-col justify-center pt-20">
   <div
-    class="lg:container mx-auto my-16 px-5 py-12 pt-0 text-center text-black"
+    class="lg:container mx-auto my-16 px-6 py-12 pt-0 text-center text-black"
   >
-    <h1 class="text-5xl font-bold mb-2">Hi! I'm Chen Ning.</h1>
+    <h1 class="mb-2">Hi! I'm Chen Ning.</h1>
     <p class="text-lg font-normal">
       Currently a student aspiring to become a software engineer.
     </p>
   </div>
 </section>
 
+<!-- SVG wave art -->
 <div>
   <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1440 320">
     <path
@@ -21,8 +22,16 @@
   </svg>
 </div>
 
+<!-- Projects -->
 <section class="bg-gray-200">
-  <div class="lg:container mx-auto p-5">
+  <div class="lg:container mx-auto p-6">
+    <h2>My projects</h2>
+  </div>
+</section>
+
+<!-- Blog -->
+<section class="bg-gray-200">
+  <div class="lg:container mx-auto p-6">
     <h2>Latest posts</h2>
     <ul>
       {{ range first 10 .Site.RegularPages }}

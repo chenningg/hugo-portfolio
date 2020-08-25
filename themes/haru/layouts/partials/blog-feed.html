@@ -1,0 +1,45 @@
+<div x-data="{ tab: 'all' }">
+  <div class="flex justify-left align-middle">
+    <button
+      @click="tab = 'all'"
+      :class="{ 'border-b-2 border-blue-500': tab === 'all' }"
+      class="h-8 bg-gray-200 px-3"
+    >
+      All
+    </button>
+    <button
+      @click="tab = 'featured'"
+      :class="{ 'border-b-2 border-blue-500': tab === 'featured' }"
+      class="h-8 bg-gray-200 px-3"
+    >
+      Featured
+    </button>
+    <button
+      @click="tab = 'code'"
+      :class="{ 'border-b-2 border-blue-500': tab === 'code' }"
+      class="h-8 bg-gray-200 px-3"
+    >
+      Code
+    </button>
+  </div>
+  <hr />
+
+  <ul>
+    {{ range first 10 .Site.RegularPages }}
+{{ if eq .Type "posts" }}
+
+    <a
+      href="{{ .Permalink }}"
+      class="w-full h-full block p-3 hover:no-underline hover:bg-gray-200"
+    >
+      <li>
+        <h4>{{ .Title }}</h4>
+        <p>{{ .Description }}</p>
+      </li>
+    </a>
+    <hr />
+    {{ end }}
+{{ end }}
+
+  </ul>
+</div>

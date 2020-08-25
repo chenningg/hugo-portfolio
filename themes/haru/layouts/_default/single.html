@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>{{ .Title }}
-			|
-			{{ .Site.Title }}</title>
-	</head>
-	<body>
-		<h1>{{ .Title }}</h1>
-		<p>{{ .Date.Format "2 Jan, 2006" }}</p>
-		{{ .Content }}
-	</body>
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "head.html" . }}
+
+  <body>
+    {{ partial "header.html" . }}
+
+    <h2>{{ .Title }}</h1>
+    <p>{{ .Date.Format "2 Jan, 2006" }}</p>
+    {{ .Content }}
+ {{ partial "footer.html" . }}
+
+  </body>
 </html>

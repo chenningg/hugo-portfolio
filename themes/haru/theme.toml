@@ -3,8 +3,8 @@ features = []
 homepage = "http://chenningg.com/"
 license = "MIT"
 licenselink = "https://github.com/chenningg/haru/blob/master/LICENSE"
-min_version = "0.41.0"
-name = "haru"
+min_version = "0.74.0"
+name = "Haru"
 tags = []
 
 [author]

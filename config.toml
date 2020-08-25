@@ -3,7 +3,7 @@ description = "Welcome to my personal portfolio site, where I blog about code an
 enableRobotsTXT = true
 languageCode = "en-us"
 sectionPagesMenu = "main"
-theme = "haru"
+theme = "Haru"
 title = "Chen Ning"
 
 pygmentsStyle = "dracula"

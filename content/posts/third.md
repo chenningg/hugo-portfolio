@@ -1,6 +1,6 @@
 ---
 title: "Third"
-description: ""
+description: "What is the meaning of life and all that we are?"
 date: 2020-08-23T00:56:41+08:00
 draft: false
 tags: []

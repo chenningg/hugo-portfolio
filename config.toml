@@ -1,12 +1,15 @@
 baseURL = "https://chenningg.com/"
 description = "Welcome to my personal portfolio site, where I blog about code and other musings!"
 enableRobotsTXT = true
+googleAnalytics = "UA-176432250-1"
 languageCode = "en-us"
+pygmentsStyle = "dracula"
 sectionPagesMenu = "main"
 theme = "haru"
 title = "Chen Ning"
 
-pygmentsStyle = "dracula"
+[params]
+AuthorName = "Chen Ning"
 
 [permalinks]
 posts = "/blog/:year/:title/"

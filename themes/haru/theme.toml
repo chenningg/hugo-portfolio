@@ -12,4 +12,5 @@ homepage = "https://chenningg.com"
 name = "Chen Ning"
 
 [permalinks]
+post = "/blog/"
 posts = "/blog/:year/:title/"

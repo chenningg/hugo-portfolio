@@ -1,13 +1,11 @@
 ---
 title: "Third"
 description: "What is the meaning of life and all that we are?"
-date: 2020-08-23T00:56:41+08:00
+date: 2020-08-23T15:56:22+08:00
 draft: false
 tags: []
 categories: []
 ---
-
-# Contemplating life
 
 It's said that there is no one out there in this whole universe except for us. That we, as humanity, are alone.
 It's a very sobering thought to think that we could just be a blip in time and disappear for all eternity.

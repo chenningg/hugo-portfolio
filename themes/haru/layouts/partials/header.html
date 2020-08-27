@@ -12,11 +12,11 @@
       <!-- Main nav -->
       <nav class="h-16 text-black font-medium block">
         <div class="h-full flex flex-row items-center justify-center">
-          <a href="/" class="mx-4 mb-1 text-base">Home</a>
-          <a href="/blog/" class="mx-4 mb-1 text-base">Blog</a>
-          <a href="/projects/" class="mx-4 mb-1 text-base">Projects</a>
-          <a href="/about/" class="mx-4 mb-1 text-base">About</a>
-          <a href="/contact/" class="mx-4 mb-1 text-base">Contact</a>
+          {{ range .Site.Menus.main }}
+
+          <a href="{{ .URL }}" class="mx-4 mb-1 text-base">{{ .Name }}</a>
+          {{ end }}
+
         </div>
       </nav>
 

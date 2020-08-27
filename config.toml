@@ -1,5 +1,4 @@
 baseURL = "https://chenningg.com/"
-description = "Welcome to my personal portfolio site, where I blog about code and other musings!"
 enableRobotsTXT = true
 googleAnalytics = "UA-176432250-1"
 languageCode = "en-us"
@@ -9,7 +8,36 @@ theme = "haru"
 title = "Chen Ning"
 
 [params]
-AuthorName = "Chen Ning"
+author = "Chen Ning"
+description = "My personal portfolio site, where I blog about code and other musings."
 
-[permalinks]
-blog = "/blog/:year/:title/"
+[menu]
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = -100
+
+[[menu.main]]
+identifier = "projects"
+name = "Projects"
+url = "/projects/"
+weight = -90
+
+[[menu.main]]
+identifier = "blog"
+name = "Blog"
+url = "/blog/"
+weight = -80
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = -70
+
+[[menu.main]]
+identifier = "contact"
+name = "Contact"
+url = "/contact/"
+weight = -70

@@ -1,8 +1,9 @@
-<div x-data="{ tab: 'all' }">
+<div x-data="{ tab: 'new' }">
+  <!-- Blog content tabs -->
   <div class="flex justify-left align-middle">
     <button
-      @click="tab = 'all'"
-      :class="{ 'border-b-2 border-blue-500': tab === 'all' }"
+      @click="tab = 'new'"
+      :class="{ 'border-b-2 border-blue-500': tab === 'new' }"
       class="h-8 bg-gray-200 px-3"
     >
       All
@@ -15,16 +16,38 @@
       Featured
     </button>
     <button
-      @click="tab = 'code'"
-      :class="{ 'border-b-2 border-blue-500': tab === 'code' }"
+      @click="tab = 'top'"
+      :class="{ 'border-b-2 border-blue-500': tab === 'top' }"
       class="h-8 bg-gray-200 px-3"
     >
-      Code
+      Top
     </button>
   </div>
+
   <hr />
 
-  <ul>
+  <!-- Featured content -->
+  <ul x-show="tab === 'featured'">
+    {{ range first 10 .Site.RegularPages }}
+ {{ if eq .Params.featured true }}
+
+    <li>
+      <a
+        href="{{ .Permalink }}"
+        class="w-full h-full block p-3 hover:no-underline hover:bg-gray-200"
+      >
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description }}</p>
+      </a>
+    </li>
+    <hr />
+    {{ end }}
+ {{ end }}
+
+  </ul>
+
+  <!-- All content -->
+  <ul x-show="tab === 'new'">
     {{ range first 10 .Site.RegularPages }}
  {{ if eq .Section "blog" }}
 

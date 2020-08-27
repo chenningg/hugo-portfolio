@@ -6,7 +6,7 @@
       :class="{ 'border-b-2 border-blue-500': tab === 'new' }"
       class="h-8 bg-gray-200 px-3"
     >
-      All
+      New
     </button>
     <button
       @click="tab = 'featured'"
@@ -26,10 +26,9 @@
 
   <hr />
 
-  <!-- Featured content -->
-  <ul x-show="tab === 'featured'">
-    {{ range first 10 .Site.RegularPages }}
- {{ if eq .Params.featured true }}
+  <!-- New content -->
+  <ul x-show="tab === 'new'">
+    {{ range (where .Site.RegularPages "Section" "blog") }}
 
     <li>
       <a
@@ -42,14 +41,12 @@
     </li>
     <hr />
     {{ end }}
- {{ end }}
 
   </ul>
 
-  <!-- All content -->
-  <ul x-show="tab === 'new'">
-    {{ range first 10 .Site.RegularPages }}
- {{ if eq .Section "blog" }}
+  <!-- Featured content -->
+  <ul x-show="tab === 'featured'">
+    {{ range (where (where .Site.RegularPages "Section" "blog") ".Params.featured" true) }}
 
     <li>
       <a
@@ -62,7 +59,6 @@
     </li>
     <hr />
     {{ end }}
- {{ end }}
 
   </ul>
 </div>

@@ -8,7 +8,10 @@
 </header>
 
 <main>
-  <div class="container mx-auto p-6">{{ .Content }}</div>
+  <div class="container mx-auto p-6">
+    {{ partial "blog-feed.html" . }}
+
+  </div>
 </main>
 
 {{ end }}

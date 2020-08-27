@@ -1,10 +1,31 @@
 {{ define "main" }}
- {{ range .Pages }}
 
-<article>
-  <h2>{{ .Title }}</h2>
-  {{ .Content }}
+<header>
+  <div class="container mx-auto my-5 text-center p-6">
+    <h2>{{- .Title -}}</h2>
+    <p>{{- .Description -}}</p>
+  </div>
 
-</article>
-{{ end }}
+  <hr />
+</header>
+
+<main>
+  <ul class="container mx-auto p-6">
+    {{ range .Pages }}
+
+    <li>
+      <a
+        href="{{ .Permalink }}"
+        class="hover:bg-gray-200 hover:no-underline block p-3"
+      >
+        <h3>{{ .Title }}</h3>
+        <span class="text-base">{{ .Date.Format "02 Jan, 2006" }}</span>
+        <p class="text-base">{{ .Description }}</p>
+      </a>
+    </li>
+    {{ end }}
+
+  </ul>
+</main>
+
 {{ end }}

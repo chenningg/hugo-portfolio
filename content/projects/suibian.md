@@ -4,8 +4,6 @@ description: "A food recommendation app for indecisive groups of friends about w
 date: 2020-08-27T15:47:36+08:00
 ---
 
-## Suibian
-
 Suibian is a food recommendation app for indecisive groups of friend about where and what to eat. This app was made by a group of six people (including me) in the span of a week for our CZ2006 Software Engineering college course. The word "Suibian" is a [Singlish](https://en.wikipedia.org/wiki/Singlish) term for "anyhow/anything".
 
 [Check it out!](https://suibian-database.herokuapp.com/)

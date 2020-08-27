@@ -1,11 +1,11 @@
 ---
 title: ""
 description: ""
-author: { { .Site.Params.author } }
+author: {{ .Site.Params.author }}
 type: post
 featuredImage: ~
 featured: false
-date: { { .Date } }
+date: {{ .Date }}
 draft: true
 tags: []
 categories: []

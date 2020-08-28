@@ -1,14 +1,23 @@
 {{ define "main" }}
 
-<header>
+<section>
   <div class="container mx-auto mt-3 text-center p-6">
-    <h2>{{- .Title -}}</h2>
-    <p>{{- .Description -}}</p>
-  </div>
-</header>
+    <h1>{{- .Title -}}</h1>
 
-<main>
-  <div class="container mx-auto p-6">{{ .Content }}</div>
-</main>
+    {{ with .Description }}<p>{{- . -}}</p>{{ end }}
+    
+    <div class="flex justify-center align-middle mt-3">
+      {{ with .Params.author}}
+        <a href="/about" class="inline-block text-sm font-medium hover:no-underline hover:text-indigo-600">{{ . }}</a>
+        <p class="inline-block text-sm text-gray-500">&nbsp;/&nbsp;</p>
+      {{ end }}
+      <time class="inline-block text-sm text-gray-500">{{ $.Date.Format "2 Jan, 2006" }}</time>
+    </div>
+  </div>
+</section>
+
+<section>
+  <article class="container mx-auto p-6">{{ .Content }}</article>
+</section>
 
 {{ end }}

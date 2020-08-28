@@ -1,17 +1,21 @@
 {{ define "main" }}
 
-<header>
+<section>
   <div class="container mx-auto mt-3 text-center p-6">
     <h2>{{- .Title -}}</h2>
-    <p>{{- .Description -}}</p>
-  </div>
-</header>
+    {{ with .Description }}
 
-<main>
+    <p class="m-0">{{- . -}}</p>
+    {{ end }}
+
+  </div>
+</section>
+
+<section>
   <div class="container mx-auto p-6">
     {{ partial "blog-feed.html" . }}
 
   </div>
-</main>
+</section>
 
 {{ end }}

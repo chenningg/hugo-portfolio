@@ -12,6 +12,7 @@ author = "Chen Ning"
 description = "My personal portfolio site, where I blog about code and other musings."
 
 [menu]
+
 [[menu.main]]
 identifier = "home"
 name = "Home"

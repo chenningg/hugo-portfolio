@@ -1,0 +1,64 @@
+{{- $src := .Page.Resources.GetMatch (printf "**%s*" (.Get "src")) -}}
+
+{{- $xs := default "300" -}}
+{{- $sm := default "600" -}}
+{{- $md := default "900" -}}
+{{- $lg := default "1200" -}}
+{{- $sizes := (.Get "sizes") | default "(min-width: 600px) 700px, 100vw" -}}
+
+{{- if $src -}}
+
+  {{- $xsImg := $src.Resize (printf "%sx" ($xs)) -}}
+  {{- $smImg := $src.Resize (printf "%sx" ($sm)) -}}
+  {{- $mdImg := $src.Resize (printf "%sx" ($md)) -}}
+  {{- $lgImg := $src.Resize (printf "%sx" ($lg)) -}}
+
+  <figure>
+    <picture>
+      <source
+        sizes="{{- $sizes -}}"
+        srcset='
+        {{ if ge $src.Width $xs }}
+          {{ with $xsImg.RelPermalink }}{{ . }} 300w,{{ end }}
+        {{ end }}
+        {{ if ge $src.Width $sm }}
+          {{ with $smImg.RelPermalink }}{{ . }} 600w,{{ end }}
+        {{ end }}
+        {{ if ge $src.Width $md }}
+          {{ with $mdImg.RelPermalink }}{{ . }} 900w,{{ end }}
+        {{ end }}
+        {{ if ge $src.Width $lg }}
+          {{ with $lgImg.RelPermalink }}{{ . }} 1200w,{{ end }}
+        {{ end }}'
+      />
+      <img
+        src='
+        {{- if .Get (print $mdImg) -}}
+          {{- $mdImg.RelPermalink -}}
+        {{ else }}
+          {{- $src.RelPermalink -}}
+        {{ end }}'
+
+        {{- with .Get "alt" -}}
+          alt='{{- . -}}'
+        {{ else }}
+          alt=''
+        {{ end }}
+
+        loading='lazy'
+      />
+    </picture>
+
+    {{ with .Get "caption" }}
+
+    <figcaption>{{ . }}</figcaption>
+    {{ end }}
+
+  </figure>
+
+{{ else }}
+  {{- warnf "Unable to find '%s' -- ensure image exists alongside document in '%s' page bundle." (.Get "src") (.Page.Title) -}}
+  <div class="w-full flex justify-center align-middle h-16 px-3 bg-gray-200 my-5">
+    <span class="pt-2">Can't find this image (please let me know!)</span>
+  </div>
+{{- end }}

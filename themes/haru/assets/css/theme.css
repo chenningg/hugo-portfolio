@@ -2,21 +2,17 @@
 
 /* Typography */
 h1,
-h2 {
-  @apply font-sans;
-  @apply mb-3;
-}
-
 h2,
 h3,
 h4,
 h5,
 h6 {
+  @apply font-sans;
+  @apply mb-1;
   @apply font-medium;
 }
 
 h1 {
-  @apply font-bold;
   @apply text-4xl;
 }
 
@@ -24,7 +20,10 @@ h2 {
   @apply text-3xl;
 }
 
-h3,
+h3 {
+  @apply text-2xl;
+}
+
 h4 {
   @apply text-xl;
 }
@@ -45,8 +44,25 @@ a:hover {
   @apply underline;
 }
 
+article p {
+  @apply mb-5;
+}
+
 /* Forms and buttons */
 
 button:focus {
   @apply outline-none;
+}
+
+/* Images */
+figure {
+  @apply text-center;
+  @apply block;
+  @apply mb-5;
+}
+
+picture {
+  @apply inline-block;
+  @apply mx-auto;
+  @apply bg-gray-200;
 }

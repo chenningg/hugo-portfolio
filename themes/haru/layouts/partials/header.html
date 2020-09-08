@@ -1,9 +1,9 @@
-<header>
+<header class="z-20">
   <!-- Desktop menu -->
   <div class="w-full h-16 bg-white border border-b hidden md:block">
     <div class="container mx-auto flex justify-between px-6">
       <!-- Logo -->
-      <div class="h-16 flex justify-center items-center">
+      <div class="h-16 w-32 flex justify-left items-center">
         <a href="/" class="text-black font-bold text-xl hover:no-underline pb-2"
           >Chen Ning</a
         >
@@ -21,10 +21,9 @@
       </nav>
 
       <!-- Placeholder block to center main nav -->
-      <div class="h-16 block invisible">
-        <a href="/" class="text-black font-bold text-xl hover:no-underline pb-2"
-          >Chen Ning</a
-        >
+      <div class="h-16 w-32 flex justify-end items-center">
+        {{ partial "search.html" . }}
+
       </div>
     </div>
   </div>
@@ -40,12 +39,18 @@
       </div>
 
       <!-- Menu -->
-      <div x-data="{open: false}" class="flex justify-end items-center">
+      <div
+        x-data="{open: false}"
+        class="flex justify-end items-center md:hidden"
+      >
+        <!-- Search -->
+        {{ partial "search.html" . }}
+
         <!-- Menu button -->
         <button
           @click="open = true"
           aria-label="Open menu"
-          class="flex flex-col justify-center items-center h-8 w-8 space-y-1 cursor-pointer"
+          class="flex flex-col justify-center items-center h-8 w-8 space-y-1 cursor-pointer ml-3"
         >
           <span class="w-6 h-1 rounded-full bg-black"></span>
           <span class="w-6 h-1 rounded-full bg-black"></span>
@@ -56,7 +61,7 @@
         <nav
           x-show="open"
           @click.away="open = false"
-          class="fixed inset-y-0 right-0 w-64 bg-gray-100 z-20 shadow-lg"
+          class="fixed inset-y-0 right-0 w-64 bg-gray-100 z-40 shadow-lg md:hidden"
         >
           <div class="w-full h-full flex flex-col">
             <!-- Heading -->
@@ -107,7 +112,7 @@
         </nav>
 
         <!-- Darken background when main nav is open -->
-        <div x-show="open" class="fixed bg-black opacity-25 inset-0 z-10"></div>
+        <div x-show="open" class="fixed bg-black opacity-25 inset-0 z-30"></div>
       </div>
     </div>
   </div>

@@ -11,6 +11,9 @@ title = "Chen Ning"
 author = "Chen Ning"
 description = "My personal portfolio site, where I blog about code and other musings."
 
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
 [menu]
 
 [[menu.main]]

@@ -1,0 +1,13 @@
+[{{ $entries := "" }}
+  {{- range $index, $page := .Site.RegularPages -}}
+    {{- if gt $index 0 -}} , {{- end -}}
+    {{- $entry := dict "url" $page.RelPermalink -}}
+    {{- with $page.Title -}} {{- $entry = merge $entry (dict "title" $page.Title) -}} {{- end -}}
+    {{- with $page.Plain -}} {{- $entry = merge $entry (dict "content" ($page.Plain | htmlUnescape)) -}} {{- end -}}
+    {{- with $page.Description -}} {{- $entry = merge $entry (dict "description" $page.Description) -}} {{- end -}}
+    {{- with $page.Params.categories -}} {{- $entry = merge $entry (dict "categories" $page.Params.categories) -}} {{- end -}}
+    {{- with $page.Params.tags -}} {{- $entry = merge $entry (dict "tags" $page.Params.tags) -}} {{- end -}}
+    {{- with $page.Date -}} {{- $entry = merge $entry (dict "date" $page.Date) -}} {{- end -}}
+    {{- $entry | jsonify -}}
+    {{- $entries = printf "%s%s" $entries ($page.Plain | htmlUnescape) -}}
+  {{- end -}}, {"hash":"{{- string $entries | md5 -}}"}]

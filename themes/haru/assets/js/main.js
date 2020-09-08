@@ -1,1 +1,7 @@
-import("alpinejs");
+import "alpinejs";
+import HugoSearch from "./hugosearch.js";
+
+const hugoSearch = new HugoSearch({
+  mode: "production",
+  limit: 10,
+});

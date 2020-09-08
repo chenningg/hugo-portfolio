@@ -37,6 +37,9 @@ module.exports = {
         "screen-2/3": "calc(100vw * (2/3))",
         "screen-3/4": "75vw",
       },
+      inset: {
+        "1/2": "50%",
+      },
       colors: {
         twitter: "#1da1f2",
       },

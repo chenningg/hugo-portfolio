@@ -38,13 +38,6 @@ export default class HugoSearch {
         if (post.description) {
           result += `<p class="text-base">${post.description}</p>`;
         }
-        if (post.categories) {
-          result += `<div class="space-x-1 mt-2">`;
-          post.categories.forEach((category) => {
-            result += `<span class="px-2 inline-block rounded-lg text-white text-xs font-medium bg-purple-700">${category}</span>`;
-          });
-          result += `</div>`;
-        }
         result += `</a></div><hr class="mb-4 block w-full" />`;
         return result;
       },

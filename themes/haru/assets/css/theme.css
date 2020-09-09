@@ -8,16 +8,24 @@ h4,
 h5,
 h6 {
   @apply font-sans;
-  @apply mb-1;
   @apply font-medium;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  @apply mb-1;
 }
 
 h1 {
   @apply text-4xl;
+  @apply mb-2;
 }
 
 h2 {
   @apply text-3xl;
+  @apply mb-3;
 }
 
 h3 {

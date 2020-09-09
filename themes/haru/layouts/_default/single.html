@@ -4,14 +4,23 @@
   <div class="container mx-auto mt-3 text-center p-6">
     <h1>{{- .Title -}}</h1>
 
-    {{ with .Description }}<p>{{- . -}}</p>{{ end }}
-    
+    {{ with .Description }}
+
+    <p>{{- . -}}</p>
+    {{ end }}
+
     <div class="flex justify-center align-middle mt-3">
-      {{ with .Params.author}}
-        <a href="/about" class="inline-block text-sm font-medium hover:no-underline hover:text-indigo-600">{{ . }}</a>
-        <p class="inline-block text-sm text-gray-500">&nbsp;/&nbsp;</p>
+      {{ with .Params.author }}
+
+      <a href="/about" class="inline-block text-sm font-medium text-indigo-600"
+        >{{ . }}</a
+      >
+      <p class="inline-block text-sm text-black">&nbsp;/&nbsp;</p>
       {{ end }}
-      <time class="inline-block text-sm text-gray-500">{{ $.Date.Format "2 Jan, 2006" }}</time>
+
+      <time class="inline-block text-sm text-black"
+        >{{ $.Date.Format "2 Jan, 2006" }}</time
+      >
     </div>
   </div>
 </section>

@@ -1,7 +1,8 @@
 @import "tailwindcss/base";
 
-/* Add in our theme styles to overwrite defaults. */
+/* Add in our theme and code highlight styles. */
 @import "theme.css";
+@import "prism.css";
 
 @import "tailwindcss/components";
 

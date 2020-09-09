@@ -5,7 +5,11 @@
       <!-- Logo -->
       <div class="h-16 w-32 flex justify-left items-center">
         <a href="/" class="text-black font-bold text-xl hover:no-underline pb-2"
-          >Chen Ning</a
+          >{{- with .Site.Params.author -}}
+ {{- . -}}
+ {{- else -}}
+ Logo
+          {{- end -}}</a
         >
       </div>
 

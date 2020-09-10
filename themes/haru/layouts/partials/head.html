@@ -31,19 +31,25 @@
 
   {{- with .Site.GoogleAnalytics -}}
 
-  {{ template "_internal/google_analytics_async.html" $ }}
- {{- end -}}
+    {{ template "_internal/google_analytics_async.html" $ }}
+  {{- end -}}
 
-  {{- $css := resources.Get "css/main.css" | postCSS | minify | fingerprint -}}
 
-  {{- $codeHighlight := resources.Get "js/prism.js" -}}
-  {{- $mainJs := resources.Get "js/main.js" | js.Build -}}
+  {{- $css := "Css bundle" -}}
+
+  {{- $mainCss := resources.Get "css/main.css" | postCSS -}}
+  {{- $codeHighlightCss := resources.Get "css/prism.css" -}}
 
   {{ $js := "Javascript bundle" }}
 
+  {{- $codeHighlightJs := resources.Get "js/prism.js" -}}
+  {{- $mainJs := resources.Get "js/main.js" | js.Build -}}
+
   {{- if .Params.codeHighlight -}}
-    {{- $js = slice $codeHighlight $mainJs | resources.Concat "js/bundle.js" | minify | fingerprint -}}
+    {{- $css = slice $mainCss $codeHighlightCss | resources.Concat "css/bundle.css" | minify | fingerprint -}}
+    {{- $js = slice $mainJs $codeHighlightJs | resources.Concat "js/bundle.js" | minify | fingerprint -}}
   {{- else -}}
+    {{- $css = $mainCss | minify | fingerprint -}}
     {{- $js = $mainJs | minify | fingerprint -}}
   {{- end -}}
   

@@ -1,53 +1,92 @@
 {{ $paginator := .Paginator }}
+ {{ if gt $paginator.TotalPages 1 }}
 
-{{ if gt $paginator.TotalPages 1 }}
+<div class="w-full flex justify-center items-center text-black text-base">
+  <!-- Arrow to first page -->
+  {{ if ne $paginator.PageNumber 1 }}
 
-  <div class="w-full flex justify-center items-center">
-    
-    <!-- Arrow to first page -->
-    {{ if ne $paginator.PageNumber 1 }}
-    <button class="w-6 h-8 bg-gray-200">
-      <a class="pagination__link pagination__link--first" href="{{ $paginator.First.URL }}">
-        ≤
-      </a>
-    </button>
-    {{ end }}
+  <button
+    class="bg-gray-200 w-6 h-8"
+    onclick="location.href='{{ $paginator.First.URL }}'"
+    type="button"
+  >
+    ≤
+  </button>
+  {{ else }}
+ <button class="w-6 h-8 invisible">Placeholder</button>
+  {{ end }}
 
-    <!-- Previous page. -->
-    {{ if $paginator.HasPrev }}
-    <button class="pagination__item pagination__item--previous">
-      <a href="{{ $paginator.Prev.URL }}" class="pagination__link pagination__link--previous">
-        <
-      </a>
-    </button>
-    {{ end }}
+  <!-- Previous page. -->
+  {{ if $paginator.HasPrev }}
 
+  <button
+    class="bg-gray-200 w-6 h-8 ml-2"
+    onclick="location.href='{{ $paginator.Prev.URL }}'"
+    type="button"
+  >
+    <
+  </button>
+  {{ else }}
+ <button class="w-6 h-8 invisible ml-2">Placeholder</button>
+  {{ end }}
+
+  <div class="flex justify-center items-center space-x-2 mx-4">
     <!-- Page numbers. -->
     {{ range $paginator.Pagers }}
-    <button class="pagination__item{{ if eq . $paginator }} pagination__item--current{{ end }}">
-      <a href="{{ .URL }}" class="pagination__link">
-        {{ .PageNumber }}
-      </a>
-    </button>
-    {{ end }}
 
-    <!-- Next page. -->
-    {{ if $paginator.HasNext }}
-    <button class="pagination__item pagination__item--next">
-      <a href="{{ $paginator.Next.URL }}" class="pagination__link pagination__link--next">
-        >
-      </a>
-    </button>
-    {{ end }}
+    <!-- If current page is this page -->
+    {{ if eq . $paginator }}
 
-    <!-- Last page. -->
-    {{ if ne $paginator.PageNumber $paginator.TotalPages }}
-    <button class="pagination__item pagination__item--last">
-      <a class="pagination__link pagination__link--last" href="{{ $paginator.Last.URL }}">
-        ≥
-      </a>
+    <button
+      class="bg-indigo-600 w-6 h-8 text-white"
+      onclick="location.href='{{ .URL }}'"
+      type="button"
+    >
+      {{- .PageNumber -}}
+
+    </button>
+    {{ else }}
+
+    <button
+      class="bg-gray-200 w-6 h-8"
+      onclick="location.href='{{ .URL }}'"
+      type="button"
+    >
+      {{- .PageNumber -}}
+
     </button>
     {{ end }}
+ {{ end }}
 
   </div>
+
+  <!-- Next page. -->
+  {{ if $paginator.HasNext }}
+
+  <button
+    class="bg-gray-200 w-6 h-8 mr-2"
+    onclick="location.href='{{ $paginator.Next.URL }}'"
+    type="button"
+  >
+    >
+  </button>
+  {{ else }}
+ <button class="w-6 h-8 invisible mr-2">Placeholder</button>
+  {{ end }}
+
+  <!-- Last page. -->
+  {{ if ne $paginator.PageNumber $paginator.TotalPages }}
+
+  <button
+    class="bg-gray-200 w-6 h-8"
+    onclick="location.href='{{ $paginator.Last.URL }}'"
+    type="button"
+  >
+    ≥
+  </button>
+  {{ else }}
+ <button class="w-6 h-8 invisible">Placeholder</button>
+  {{ end }}
+
+</div>
 {{ end }}

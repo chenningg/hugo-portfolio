@@ -36,8 +36,17 @@
 
   {{- $css := resources.Get "css/main.css" | postCSS | minify | fingerprint -}}
 
-  {{- $js := resources.Get "js/main.js" | js.Build | minify | fingerprint -}}
+  {{- $codeHighlight := resources.Get "js/prism.js" -}}
+  {{- $mainJs := resources.Get "js/main.js" | js.Build -}}
 
+  {{ $js := "Javascript bundle" }}
+
+  {{- if .Params.codeHighlight -}}
+    {{- $js = slice $codeHighlight $mainJs | resources.Concat "js/bundle.js" | minify | fingerprint -}}
+  {{- else -}}
+    {{- $js = $mainJs | minify | fingerprint -}}
+  {{- end -}}
+  
 
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
   <script src="{{ $js.RelPermalink }}" defer></script>

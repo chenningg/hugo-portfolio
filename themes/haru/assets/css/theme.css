@@ -1,5 +1,12 @@
 /* Default overrides for tailwindcss */
 
+/* Global */
+
+/* Hide alpineJS elements until it initializes */
+[x-cloak] {
+  display: none;
+}
+
 /* Typography */
 h1,
 h2,

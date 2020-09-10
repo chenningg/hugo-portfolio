@@ -64,6 +64,7 @@
         <!-- Mobile nav -->
         <nav
           x-show="open"
+          x-cloak
           @click.away="open = false"
           class="fixed inset-y-0 right-0 w-64 bg-gray-100 z-40 shadow-lg md:hidden"
         >
@@ -104,7 +105,11 @@
         </nav>
 
         <!-- Darken background when main nav is open -->
-        <div x-show="open" class="fixed bg-black opacity-25 inset-0 z-30"></div>
+        <div
+          x-cloak
+          x-show="open"
+          class="fixed bg-black opacity-25 inset-0 z-30"
+        ></div>
       </div>
     </div>
   </div>

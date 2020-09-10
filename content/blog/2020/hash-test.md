@@ -7,9 +7,16 @@ featuredImage: ~
 featured: false
 date: 2020-08-30T04:59:54+08:00
 draft: false
+codeHighlight: true
 tags: ["test", "hashing"]
 categories: ["hash", "coding"]
 ---
+
+```javascript
+function() {
+  return "This is a test";
+}
+```
 
 Hello there the angel from my nightmares, the shadow in the background of the morgue, the unsuspecting victim of darkness in the valley...
 

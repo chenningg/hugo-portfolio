@@ -27,23 +27,25 @@
   <hr />
 
   <!-- New content -->
-  <ul x-show="tab === 'new'">
-    {{ range (where .Site.RegularPages "Section" "blog") }}
+  <ul x-show="tab === 'new'" class="mb-4">
+    {{ $paginator := .Paginate (where .Site.RegularPages "Section" "blog") }}
+
+    {{- range $paginator.Pages -}}
 
     <li>
       <a
-        href="{{ .Permalink }}"
+        href="{{- .Permalink -}}"
         class="w-full h-full block p-3 hover:no-underline hover:bg-gray-200"
       >
-        <h3 class="text-xl">{{ .Title }}</h3>
-        <p>{{ .Description }}</p>
+        <h3 class="text-lg">{{- .Title -}}</h3>
+        <p>{{- .Description -}}</p>
       </a>
       <hr />
     </li>
-
-    {{ end }}
-
+    {{- end -}}
   </ul>
+  
+  {{ partial "pagination.html" . }}
 
   <!-- Featured content -->
   <ul x-show="tab === 'featured'">

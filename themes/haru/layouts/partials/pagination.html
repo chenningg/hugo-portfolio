@@ -1,0 +1,53 @@
+{{ $paginator := .Paginator }}
+
+{{ if gt $paginator.TotalPages 1 }}
+
+  <div class="w-full flex justify-center items-center">
+    
+    <!-- Arrow to first page -->
+    {{ if ne $paginator.PageNumber 1 }}
+    <button class="w-6 h-8 bg-gray-200">
+      <a class="pagination__link pagination__link--first" href="{{ $paginator.First.URL }}">
+        ≤
+      </a>
+    </button>
+    {{ end }}
+
+    <!-- Previous page. -->
+    {{ if $paginator.HasPrev }}
+    <button class="pagination__item pagination__item--previous">
+      <a href="{{ $paginator.Prev.URL }}" class="pagination__link pagination__link--previous">
+        <
+      </a>
+    </button>
+    {{ end }}
+
+    <!-- Page numbers. -->
+    {{ range $paginator.Pagers }}
+    <button class="pagination__item{{ if eq . $paginator }} pagination__item--current{{ end }}">
+      <a href="{{ .URL }}" class="pagination__link">
+        {{ .PageNumber }}
+      </a>
+    </button>
+    {{ end }}
+
+    <!-- Next page. -->
+    {{ if $paginator.HasNext }}
+    <button class="pagination__item pagination__item--next">
+      <a href="{{ $paginator.Next.URL }}" class="pagination__link pagination__link--next">
+        >
+      </a>
+    </button>
+    {{ end }}
+
+    <!-- Last page. -->
+    {{ if ne $paginator.PageNumber $paginator.TotalPages }}
+    <button class="pagination__item pagination__item--last">
+      <a class="pagination__link pagination__link--last" href="{{ $paginator.Last.URL }}">
+        ≥
+      </a>
+    </button>
+    {{ end }}
+
+  </div>
+{{ end }}

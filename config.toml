@@ -2,6 +2,7 @@ baseURL = "https://chenningg.com/"
 enableRobotsTXT = true
 googleAnalytics = "UA-176432250-1"
 languageCode = "en-us"
+paginate = 2
 pygmentsStyle = "dracula"
 sectionPagesMenu = "main"
 theme = "haru"
@@ -10,6 +11,9 @@ title = "Chen Ning"
 [params]
 author = "Chen Ning"
 description = "My personal portfolio site, where I blog about code and other musings."
+email = "chenningg97@gmail.com"
+github = "https://github.com/chenningg"
+twitter = "https://twitter.com/chenningg97"
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
@@ -23,15 +27,15 @@ url = "/"
 weight = -100
 
 [[menu.main]]
-identifier = "projects"
-name = "Projects"
-url = "/projects/"
-weight = -90
-
-[[menu.main]]
 identifier = "blog"
 name = "Blog"
 url = "/blog/"
+weight = -90
+
+[[menu.main]]
+identifier = "projects"
+name = "Projects"
+url = "/projects/"
 weight = -80
 
 [[menu.main]]
@@ -44,4 +48,4 @@ weight = -70
 identifier = "contact"
 name = "Contact"
 url = "/contact/"
-weight = -70
+weight = -60

@@ -23,6 +23,7 @@ module.exports = {
     extend: {
       colors: {
         twitter: "#1da1f2",
+        gmail: "#dd5043",
       },
     },
   },

@@ -7,17 +7,19 @@
 {{- $sizes := (.Get "sizes") | default "(min-width: 600px) 700px, 100vw" -}}
 
 {{- if $src -}}
+ {{- $xsImg := $src.Resize (printf "%sx" ($xs)) -}}
 
-  {{- $xsImg := $src.Resize (printf "%sx" ($xs)) -}}
-  {{- $smImg := $src.Resize (printf "%sx" ($sm)) -}}
-  {{- $mdImg := $src.Resize (printf "%sx" ($md)) -}}
-  {{- $lgImg := $src.Resize (printf "%sx" ($lg)) -}}
+{{- $smImg := $src.Resize (printf "%sx" ($sm)) -}}
 
-  <figure>
-    <picture>
-      <source
-        sizes="{{- $sizes -}}"
-        srcset='
+{{- $mdImg := $src.Resize (printf "%sx" ($md)) -}}
+
+{{- $lgImg := $src.Resize (printf "%sx" ($lg)) -}}
+
+<figure>
+  <picture>
+    <source
+      sizes="{{- $sizes -}}"
+      srcset="
         {{ if ge $src.Width $xs }}
           {{ with $xsImg.RelPermalink }}{{ . }} 300w,{{ end }}
         {{ end }}
@@ -29,36 +31,39 @@
         {{ end }}
         {{ if ge $src.Width $lg }}
           {{ with $lgImg.RelPermalink }}{{ . }} 1200w,{{ end }}
-        {{ end }}'
-      />
-      <img
-        src='
+        {{ end }}"
+    />
+    <img
+      src="
         {{- if .Get (print $mdImg) -}}
           {{- $mdImg.RelPermalink -}}
         {{ else }}
           {{- $src.RelPermalink -}}
-        {{ end }}'
+        {{ end }}"
+      {{- with .Get "alt" -}}
 
-        {{- with .Get "alt" -}}
-          alt='{{- . -}}'
-        {{ else }}
-          alt=''
-        {{ end }}
+      alt="{{- . -}}"
+      {{ else }}
 
-        loading='lazy'
-      />
-    </picture>
+      alt=""
+      {{ end }}
 
-    {{ with .Get "caption" }}
+      loading="lazy"
+    />
+  </picture>
 
-    <figcaption>{{ . }}</figcaption>
-    {{ end }}
+  {{ with .Get "caption" }}
 
-  </figure>
+  <figcaption>{{ . }}</figcaption>
+  {{ end }}
+
+</figure>
 
 {{ else }}
-  {{- warnf "Unable to find '%s' -- ensure image exists alongside document in '%s' page bundle." (.Get "src") (.Page.Title) -}}
-  <div class="w-full flex justify-center align-middle h-16 px-3 bg-gray-200 my-5">
-    <span class="pt-2">Can't find this image (please let me know!)</span>
-  </div>
+
+{{- warnf "Unable to find '%s' -- ensure image exists alongside document in '%s' page bundle." (.Get "src") (.Page.Title) -}}
+
+<div class="w-full flex justify-center items-center h-16 px-3 bg-gray-200 my-5">
+  <span>Can't find this image (please let me know!)</span>
+</div>
 {{- end }}

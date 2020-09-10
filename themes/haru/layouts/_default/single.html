@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <section>
-  <div class="container mx-auto mt-3 text-center p-6">
+  <article class="container mx-auto mt-3 text-center p-6">
     <h1>{{- .Title -}}</h1>
 
     {{ with .Description }}
@@ -12,7 +12,7 @@
     <div class="flex justify-center align-middle mt-3">
       {{ with .Params.author }}
 
-      <a href="/about" class="inline-block text-sm font-medium text-indigo-600"
+      <a href="/about" class="inline-block text-sm font-medium"
         >{{ . }}</a
       >
       <p class="inline-block text-sm text-black">&nbsp;/&nbsp;</p>
@@ -22,7 +22,7 @@
         >{{ $.Date.Format "2 Jan, 2006" }}</time
       >
     </div>
-  </div>
+  </article>
 </section>
 
 <section>

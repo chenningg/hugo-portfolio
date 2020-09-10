@@ -1,6 +1,5 @@
 code[class*="language-"],
 pre[class*="language-"] {
-  @apply rounded-md;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -20,14 +19,6 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-}
-
-/* Remove rounded if full width */
-@media screen and (max-width: 900px) {
-  code[class*="language-"],
-  pre[class*="language-"] {
-    @apply rounded-none;
-  }
 }
 
 code[class*="language-"]::-moz-selection,
@@ -55,6 +46,11 @@ pre[class*="language-"] {
   position: relative;
   margin: 0.5em 0;
   padding: 1.25em 1em;
+}
+
+code[class*="language-"] {
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .language-css > code,
@@ -220,23 +216,6 @@ pre[class*="language-"] {
 
 /* Plugin css */
 
-/* File names */
-pre[data-file]::before {
-  content: attr(data-file);
-  position: absolute;
-  padding: 0.2em 1em;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgb(15, 15, 15);
-  text-align: center;
-}
-
-code[data-file],
-pre[data-file] {
-  padding-top: 2.6em;
-}
-
 /* Line highlight plugin */
 
 .line-highlight {
@@ -249,11 +228,6 @@ pre[data-file] {
   pointer-events: none;
   line-height: inherit;
   white-space: pre;
-}
-
-code[data-file] .line-highlight,
-pre[data-file] .line-highlight {
-  margin-top: 2.6em;
 }
 
 /* Link plugin */

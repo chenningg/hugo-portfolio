@@ -1,9 +1,11 @@
 <div class="flex justify-center align-middle">
   <!-- Email -->
+  {{ with .Site.Params.email }}
+
   <a
-    href="mailto:chenningg97@gmail.com"
+    href="mailto:{{- . -}}"
     aria-label="Email link"
-    class="w-12 h-8 mx-2 rounded-md bg-red-500 hover:shadow-md hover:no-underline flex justify-center items-center"
+    class="w-12 h-8 mx-2 rounded-md bg-gmail hover:shadow-md hover:no-underline flex justify-center items-center"
   >
     <svg
       class="w-4 h-4"
@@ -18,10 +20,14 @@
       />
     </svg>
   </a>
+  {{ end }}
+
 
   <!-- Twitter -->
+  {{ with .Site.Params.twitter }}
+
   <a
-    href="https://twitter.com/chenningg97"
+    href="{{- . -}}"
     aria-label="Twitter link"
     class="w-12 h-8 mx-2 rounded-md bg-twitter hover:shadow-md hover:no-underline flex justify-center items-center"
   >
@@ -38,10 +44,13 @@
       />
     </svg>
   </a>
+  {{ end }}
 
   <!-- Github -->
+  {{ with .Site.Params.github }}
+
   <a
-    href="https://github.com/chenningg"
+    href="{{- . -}}"
     aria-label="Github link"
     class="w-12 h-8 mx-2 rounded-md bg-gray-900 hover:shadow-md hover:no-underline flex justify-center items-center"
   >
@@ -58,4 +67,6 @@
       />
     </svg>
   </a>
+  {{ end }}
+
 </div>

@@ -90,27 +90,15 @@
 
             <!-- Menu items -->
             <div
-              class="flex flex-col items-center justify-start text-black px-6"
+              class="flex flex-col items-center justify-start text-black px-6 py-5 space-y-5"
             >
-              <a href="/" class="w-full block my-2 mt-4 text-base font-medium"
-                >Home</a
+              {{ range .Site.Menus.main }}
+
+              <a href="{{ .URL }}" class="w-full block text-base font-medium"
+                >{{ .Name }}</a
               >
-              <a href="/blog/" class="w-full block my-2 text-base font-medium"
-                >Blog</a
-              >
-              <a
-                href="/projects/"
-                class="w-full block my-2 text-base font-medium"
-                >Projects</a
-              >
-              <a href="/about/" class="w-full block my-2 text-base font-medium"
-                >About</a
-              >
-              <a
-                href="/contact/"
-                class="w-full block my-2 text-base font-medium"
-                >Contact</a
-              >
+              {{ end }}
+
             </div>
           </div>
         </nav>

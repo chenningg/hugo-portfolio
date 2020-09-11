@@ -18,21 +18,20 @@ h6 {
   @apply font-medium;
 }
 
-h3,
-h4,
-h5,
-h6 {
-  @apply mb-1;
-}
-
 h1 {
   @apply text-4xl;
   @apply mb-2;
 }
 
+h2,
+h3,
+h4,
+h5 {
+  @apply mb-4;
+}
+
 h2 {
   @apply text-3xl;
-  @apply mb-3;
 }
 
 h3 {
@@ -52,7 +51,11 @@ li {
 }
 
 article a {
-  @apply text-indigo-600;
+  @apply text-blue-500;
+}
+
+article a:visited {
+  @apply text-purple-600;
 }
 
 a:hover {
@@ -60,10 +63,15 @@ a:hover {
 }
 
 article p {
-  @apply mb-5;
+  @apply mb-6;
 }
 
 /* Forms and buttons */
+
+input {
+  @apply border;
+  @apply shadow-sm;
+}
 
 button:focus {
   @apply outline-none;

@@ -1,0 +1,33 @@
+<!-- Strips out newlines in code between opening and closing shortcode brackets. -->
+{{ $inner := replaceRE "^\n" "" .Inner }}
+
+{{ if len .Params | eq 0 }}
+  <pre>
+    <code>{{- $inner -}}</code>
+  </pre>
+{{ else }}
+  {{ if .IsNamedParams }}
+    {{- with .Get "filename"}}
+      <div class="bg-black w-full flex justify-center items-center text-gray-200 h-6">
+        <span class="text-sm font-mono font-medium text-center">{{ . }}</span>
+      </div>
+    {{ end }}
+    <pre class="
+        {{- with .Get "language" }}language-{{ . }}{{ end }}
+        {{- with .Get "command-line" }} command-line{{ end }}"
+
+        {{- with .Get "highlight" }} data-line="{{ . }}"{{ end }}
+
+        {{- with .Get "user" }} data-user="{{ . }}"{{ end }}
+        {{- with .Get "host" }} data-host="{{ . }}"{{ end }}
+        {{- with .Get "prompt" }} data-prompt="{{ . }}"{{ end }}
+        {{- with .Get "output" }} data-output="{{ . }}"{{ end }}
+        >
+        <code>{{- $inner -}}</code>
+      </pre>
+  {{ else }}
+    <pre class="language-{{ .Get 0 }}">
+      <code class="language-{{ .Get 0 }}">{{- $inner -}}</code>
+    </pre>
+  {{ end }}
+{{ end }}

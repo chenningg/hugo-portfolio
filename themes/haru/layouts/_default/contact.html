@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+<div class="container mx-auto mt-3 p-6">
+  <h1 class="text-center mb-5">{{- .Title -}}</h1>
+  <p>
+    You can reach me through this form - I'll get back to you as soon as I can!
+  </p>
+
+  <form class="flex flex-col" netlify>
+    <label for="Your email">Your email:</label>
+    <input class="h-8 shadow-md" type="text" name="Your email" />
+
+    <label for="Subject">Subject:</label>
+    <input type="text" name="Subject" />
+
+    <label for="Message">Message:</label>
+    <textarea rows="10" name="Message"></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+{{ end }}

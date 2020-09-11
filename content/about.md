@@ -1,9 +1,6 @@
 ---
 title: "About"
-date: 2020-08-22T16:50:23+08:00
-description: ""
 ---
-
 ## Hi, I'm Chen Ning
 
 I'm a student in Singapore that will be graduating from college in 2022.

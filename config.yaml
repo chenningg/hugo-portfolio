@@ -1,0 +1,50 @@
+title: "Chen Ning"
+baseURL: "https://chenningg.com/"
+languageCode: "en-us"
+enableRobotsTXT: true
+googleAnalytics: "UA-176432250-1"
+
+paginate: 2
+sectionPagesMenu: "main"
+theme: "haru"
+
+params:
+  author: "Chen Ning"
+  description: "My personal portfolio site, where I blog about code and other musings."
+  email: "chenningg97@gmail.com"
+  github: "https://github.com/chenningg"
+  twitter: "https://twitter.com/chenningg97"
+
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+
+menu:
+  main:
+    - identifier: "home"
+      name: "Home"
+      url: "/"
+      weight: -100
+    - identifier: "blog"
+      name: "Blog"
+      url: "/blog/"
+      weight: -90
+    - identifier: "projects"
+      name: "Projects"
+      url: "/projects/"
+      weight: -80
+    - identifier: "about"
+      name: "About"
+      url: "/about/"
+      weight: -70
+    - identifier: "contact"
+      name: "Contact"
+      url: "/contact/"
+      weight: -60
+
+markup:
+  highlight:
+    codeFences: false
+  tableOfContents:
+    ordered: true
+    startLevel: 2
+    endLevel: 2

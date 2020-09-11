@@ -11,13 +11,14 @@ codeHighlight: true
 tags: ["test", "hashing"]
 categories: ["hash", "coding"]
 ---
-
-```javascript
+{{< code language="javascript" filename="test.js" >}}
 function() {
-  return "This is a test";
+  return "test!";
 }
-```
+{{< /code >}}
+
 
 Hello there the angel from my nightmares, the shadow in the background of the morgue, the unsuspecting victim of darkness in the valley...
 
 We can live like Jack and Sally if we want.
+

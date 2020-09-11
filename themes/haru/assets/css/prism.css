@@ -6,10 +6,11 @@ pre[class*="language-"] {
   word-break: normal;
   word-wrap: normal;
   color: #c3cee3;
-  background: #263238;
+  background: #1f282c;
   font-family: Roboto Mono, monospace;
   font-size: 1em;
   line-height: 1.5em;
+  margin-bottom: 1em;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -25,14 +26,14 @@ code[class*="language-"]::-moz-selection,
 pre[class*="language-"]::-moz-selection,
 code[class*="language-"] ::-moz-selection,
 pre[class*="language-"] ::-moz-selection {
-  background: #363636;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 code[class*="language-"]::selection,
 pre[class*="language-"]::selection,
 code[class*="language-"] ::selection,
 pre[class*="language-"] ::selection {
-  background: #363636;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 :not(pre) > code[class*="language-"] {
@@ -44,7 +45,7 @@ pre[class*="language-"] ::selection {
 pre[class*="language-"] {
   overflow: auto;
   position: relative;
-  margin: 0.5em 0;
+  margin-bottom: 1.5em;
   padding: 1.25em 1em;
 }
 

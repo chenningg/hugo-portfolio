@@ -1,22 +1,60 @@
 {{ define "main" }}
 
 <div class="container mx-auto mt-3 p-6">
-  <h1 class="text-center mb-5">{{- .Title -}}</h1>
-  <p>
-    You can reach me through this form - I'll get back to you as soon as I can!
+  <h1 class="text-center mb-6">{{- .Title -}}</h1>
+
+  <div class="mb-8">
+    {{ partial "social-icons.html" . }}
+
+  </div>
+
+  <p class="text-center mb-5">
+    You can also drop me an email through this form and I'll get back to you as
+    soon as I can.
   </p>
 
-  <form class="flex flex-col" netlify>
-    <label for="Your email">Your email:</label>
-    <input class="h-8 shadow-md" type="text" name="Your email" />
+  <form
+    class="flex flex-col bg-gray-200 py-5 px-6 rounded-md text-black"
+    name="chenningg-contact-form"
+    method="POST"
+    netlify-honeypot="Bot catcher"
+    data-netlify="true"
+  >
+    <div class="hidden">
+      <label class="mb-1" for="Bot catcher">Bot Catcher:</label>
+      <input class="h-10 border-2 px-4 mb-3" type="text" name="Bot catcher" />
+    </div>
 
-    <label for="Subject">Subject:</label>
-    <input type="text" name="Subject" />
+    <label class="mb-1" for="Your email">Your Email:</label>
+    <input
+      class="h-10 border-2 px-4 mb-3"
+      type="email"
+      name="Your email"
+      required
+    />
 
-    <label for="Message">Message:</label>
-    <textarea rows="10" name="Message"></textarea>
+    <label class="mb-1" for="Subject">Subject:</label>
+    <input
+      class="h-10 border-2 px-4 mb-3"
+      type="text"
+      name="Subject"
+      required
+    />
 
-    <button type="submit">Send</button>
+    <label class="mb-1" for="Message">Message:</label>
+    <textarea
+      class="px-4 py-2 border-2 mb-4"
+      rows="6"
+      name="Message"
+      required
+    ></textarea>
+
+    <button
+      class="bg-white w-32 p-2 border-2 hover:bg-gray-800 hover:text-white mx-auto rounded-md"
+      type="submit"
+    >
+      Submit
+    </button>
   </form>
 </div>
 

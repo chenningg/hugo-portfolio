@@ -23,7 +23,10 @@ module.exports = {
     extend: {
       colors: {
         twitter: "#1da1f2",
-        gmail: "#dd5043",
+        linkedin: "#0077B5",
+        gmail: "#D14836",
+        github: "#181717",
+        instagram: "#E4405F",
       },
     },
   },

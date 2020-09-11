@@ -1,31 +1,26 @@
-<footer class="p-6">
-  <div class="mb-6">
-    {{ partial "social-icons.html" . }}
+<footer>
+  <div class="container mx-auto p-6">
+    <hr class="my-6" />
 
+    <nav
+      class="md:container mx-auto flex flex-col sm:flex-row justify-center align-middle text-center mb-6 space-y-2 sm:space-y-0"
+    >
+      <a href="/" class="mx-4 font-medium text-base">Home</a>
+      <a href="/blog" class="mx-4 font-medium text-base">Blog</a>
+      <a href="/projects" class="mx-4 font-medium text-base">Projects</a>
+      <a href="/about" class="mx-4 font-medium text-base">About</a>
+      <a href="/contact" class="mx-4 font-medium text-base">Contact</a>
+    </nav>
+
+    <span class="text-sm w-full text-center block mb-2"
+      >Made with
+      <a class="text-sm underline" href="https://tailwindcss.com/">Tailwind</a>
+      and
+      <a class="text-sm underline" href="https://gohugo.io">Hugo</a>.</span
+    >
+
+    <span class="text-sm w-full text-center block mb-3 text-gray-700"
+      >© Chen Ning, 2020 (CC BY-SA 4.0)</span
+    >
   </div>
-
-  <nav
-    class="md:container mx-auto flex flex-col sm:flex-row justify-center align-middle text-center mb-6"
-  >
-    <a href="/" class="mx-4 my-1 sm:my-0 font-medium text-base">Home</a>
-    <a href="/blog" class="mx-4 my-1 sm:my-0 font-medium text-base">Blog</a>
-    <a href="/projects" class="mx-4 my-1 sm:my-0 font-medium text-base"
-      >Projects</a
-    >
-    <a href="/about" class="mx-4 my-1 sm:my-0 font-medium text-base">About</a>
-    <a href="/contact" class="mx-4 my-1 sm:my-0 font-medium text-base"
-      >Contact</a
-    >
-  </nav>
-
-  <span class="text-sm w-full text-center block mb-2"
-    >Made with
-    <a class="text-sm underline" href="https://tailwindcss.com/">Tailwind</a>
-    and
-    <a class="text-sm underline" href="https://gohugo.io">Hugo</a>.</span
-  >
-
-  <span class="text-sm w-full text-center block mb-3 text-gray-700"
-    >© Chen Ning, 2020 (CC BY-SA 4.0)</span
-  >
 </footer>

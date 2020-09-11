@@ -6,14 +6,16 @@ googleAnalytics: "UA-176432250-1"
 
 paginate: 2
 sectionPagesMenu: "main"
+
+enableEmoji: true
 theme: "haru"
 
 params:
   author: "Chen Ning"
   description: "My personal portfolio site, where I blog about code and other musings."
-  email: "chenningg97@gmail.com"
   github: "https://github.com/chenningg"
   twitter: "https://twitter.com/chenningg97"
+  linkedin: "https://www.linkedin.com/in/chenningg97"
 
 outputs:
   home: ["HTML", "RSS", "JSON"]

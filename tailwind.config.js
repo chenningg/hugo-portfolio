@@ -6,9 +6,10 @@ module.exports = {
   },
   purge: {
     enabled: !isDev,
+    mode: "all",
     content: [
-      "./themes/haru/layouts/**/*.html",
-      "./themes/haru/layouts/*.html",
+      "./layouts/**/*.html",
+      "./layouts/*.html",
     ],
   },
   theme: {

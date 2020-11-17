@@ -13,13 +13,15 @@
       {{ with .Params.author }}
 
       <a href="/about" class="inline-block text-sm font-medium">{{ . }}</a>
-      <p class="inline-block text-sm text-black">&nbsp;/&nbsp;</p>
+      <span class="inline-block text-sm text-black">&nbsp;/&nbsp;</span>
+      {{ end }}
+ {{ with .Date }}
+
+      <time class="inline-block text-sm text-black"
+        >{{ $.Date.Format "2 Jan, 2006" }}</time
+      >
       {{ end }}
 
-      {{ with .Date }}
-        <time class="inline-block text-sm text-black">{{ $.Date.Format "2 Jan, 2006" }}</time>
-      {{ end }}
-      
     </div>
   </section>
   <section>

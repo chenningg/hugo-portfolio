@@ -8,7 +8,6 @@ paginate: 2
 sectionPagesMenu: "main"
 
 enableEmoji: true
-theme: "haru"
 
 params:
   author: "Chen Ning"
@@ -45,7 +44,10 @@ menu:
 
 markup:
   highlight:
-    codeFences: false
+    tabWidth: 2
+    noClasses: false
+    style: "dracula"
+
   tableOfContents:
     ordered: true
     startLevel: 2

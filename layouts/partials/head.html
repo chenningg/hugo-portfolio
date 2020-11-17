@@ -31,28 +31,18 @@
 
   {{- with .Site.GoogleAnalytics -}}
 
-    {{ template "_internal/google_analytics_async.html" $ }}
-  {{- end -}}
-
-
-  {{- $css := "Css bundle" -}}
+  {{ template "_internal/google_analytics_async.html" $ }}
+ {{- end -}}
 
   {{- $mainCss := resources.Get "css/main.css" | postCSS -}}
-  {{- $codeHighlightCss := resources.Get "css/prism.css" -}}
 
-  {{ $js := "Javascript bundle" }}
+  {{- $syntaxCss := resources.Get "css/syntax.css" -}}
 
-  {{- $codeHighlightJs := resources.Get "js/prism.js" -}}
+  {{- $css := slice $mainCss $syntaxCss | resources.Concat "css/bundle.css" | minify | fingerprint -}}
+
   {{- $mainJs := resources.Get "js/main.js" | js.Build -}}
 
-  {{- if .Params.codeHighlight -}}
-    {{- $css = slice $mainCss $codeHighlightCss | resources.Concat "css/bundle.css" | minify | fingerprint -}}
-    {{- $js = slice $mainJs $codeHighlightJs | resources.Concat "js/bundle.js" | minify | fingerprint -}}
-  {{- else -}}
-    {{- $css = $mainCss | minify | fingerprint -}}
-    {{- $js = $mainJs | minify | fingerprint -}}
-  {{- end -}}
-  
+  {{- $js := $mainJs | minify | fingerprint -}}
 
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
   <script src="{{ $js.RelPermalink }}" defer></script>

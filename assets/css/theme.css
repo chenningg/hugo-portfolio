@@ -41,7 +41,7 @@ h6,
 p,
 a,
 li {
-  @apply text-lg;
+  @apply text-base;
 }
 
 article h3,
@@ -64,6 +64,59 @@ a:hover {
 
 article p {
   @apply mb-6;
+  @apply leading-7;
+}
+
+blockquote {
+  @apply border-gray-300;
+  @apply border-l-4;
+  @apply pl-3;
+}
+
+/* Lists */
+ol,
+ul {
+  @apply list-none;
+  counter-reset: list-counter;
+  @apply mb-5;
+}
+
+article li {
+  @apply relative;
+  counter-increment: list-counter;
+  @apply pl-5;
+  @apply mb-2;
+}
+
+article ol > li::before {
+  content: counter(list-counter) ".";
+  position: absolute;
+  left: 0;
+}
+
+article ul > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
+/* Code and syntax */
+pre > code {
+  @apply rounded-lg;
+  @apply p-3;
+  @apply block;
+  @apply mb-6;
+  @apply overflow-x-auto;
+}
+
+code {
+  background-color: #282a36;
+  color: #f8f8f2;
+  @apply px-2;
+  @apply rounded-md;
+  @apply inline-block;
+  @apply text-sm;
+  @apply leading-6;
 }
 
 /* Forms and buttons */
